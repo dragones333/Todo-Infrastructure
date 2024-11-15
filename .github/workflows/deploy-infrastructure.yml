@@ -33,7 +33,7 @@ jobs:
           chmod 777 ./keys/orlando_server
           chmod 777 ./keys/orlando_server.pub
       - name: Terraform init
-       run: terraform init
+        run: terraform init
 
       - name: Terraform format
         run: terraform fmt 
