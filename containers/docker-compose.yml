@@ -24,7 +24,7 @@ services:
       - /volumes/nginx/certs:/etc/nginx/certs:ro
       - /volumes/nginx/vhostd:/etc/nginx/vhost.d
       - /volumes/nginx/html:/usr/share/nginx/html:rw
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
 
   mysql:
     image: mysql
@@ -46,7 +46,7 @@ services:
     image: saraymartinez002/examen_2parcial:latest
     container_name: TodoApi
     expose:
-      - "3000:3000"
+      - "80"
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
