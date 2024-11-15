@@ -1,19 +1,19 @@
 services:
   reverse-proxy:
-  image: nginxproxy/nginx-proxy:alpine
-  container_name: 'Revese-roxy'
-  restart: always
-  ports:
-    - 80:80
-    - 443:443
-  environment:
-    - VIRTUAL_HOST=${DOMAIN}
-    - VIRTUAL_PATH=/.well_known
-  volumes:
-    - /volumes/nginx/certs:/etc/nginx/certs:ro
-    - /volumes/nginx/vhostd:/etc/nginx/vhost.d
-    - /volumes/nginx/html:/usr/share/nginx/html:rw
-    - /var/run/docker.sock:/tmp/docker.sock:rm
+    image: nginxproxy/nginx-proxy:alpine
+    container_name: 'Revese-roxy'
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - VIRTUAL_HOST=${DOMAIN}
+      - VIRTUAL_PATH=/.well_known
+    volumes:
+      - /volumes/nginx/certs:/etc/nginx/certs:ro
+      - /volumes/nginx/vhostd:/etc/nginx/vhost.d
+      - /volumes/nginx/html:/usr/share/nginx/html:rw
+      - /var/run/docker.sock:/tmp/docker.sock:rm
 
   lets-encrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
