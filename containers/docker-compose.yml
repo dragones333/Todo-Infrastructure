@@ -65,8 +65,8 @@ services:
   todo-app:
     image: orlando333/orlando_server_page:latest
     container_name: TodoApp
-    ports:
-      - "80:80"
+    expose:
+      - "80"
 
 
 volumes:
