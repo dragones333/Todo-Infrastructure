@@ -56,7 +56,7 @@ services:
       VIRTUAL_HOST: ${DOMAIN}
       VIRTUAL_PATH: /
       LETSENCRYPT_HOST: ${DOMAIN}
-      LETSENCRYPT_EMAIL: $
+      LETSENCRYPT_EMAIL: ${USER_EMAIL}
 
     depends_on:
       mysql:
